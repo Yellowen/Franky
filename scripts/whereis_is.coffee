@@ -15,7 +15,7 @@
 module.exports = (robot) ->
 
   robot.router.post '/api/v1/locations/', (req, res) ->
-    ip = req.headers['X-Forwarded-For']
+    ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     data = {
       ip: ip,
       place: req.body.place || ""
