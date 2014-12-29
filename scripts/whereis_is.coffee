@@ -40,9 +40,8 @@ module.exports = (robot) ->
       data = peoples[person]
 
       if data?
-        msg.reply("I found " + person + " in " + data.place + " [" + data.ip + "]")
+        msg.reply("I found " + person + " in " + data.place + " [ " + data.ip + " ]")
         return
 
-    else
-      msg.reply("How should I know ?")
-      msg.reply("I didn't get any info about that dude")
+    msg.reply("How should I know ?")
+    msg.reply("I didn't get any info about that dude")
