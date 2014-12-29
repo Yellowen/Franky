@@ -18,7 +18,7 @@ module.exports = (robot) ->
     ip = req.connection.remoteAddress
     data = {
       ip: ip,
-      place: req.body.place
+      place: req.body.place || ""
     }
 
     peoples = JSON.parse(robot.brain.get('peoples'))
@@ -40,7 +40,7 @@ module.exports = (robot) ->
       data = peoples[person]
 
       if data?
-        msg.reply("I found " + person + " in " + data.place)
+        msg.reply("I found " + person + " in " + data.place + " [" + data.ip + "]")
         return
 
     else
