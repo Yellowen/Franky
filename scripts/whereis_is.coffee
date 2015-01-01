@@ -30,7 +30,7 @@ module.exports = (robot) ->
     peoples[person] = data
 
     robot.brain.set('peoples', JSON.stringify(peoples))
-    res.send 'OK'
+    res.end 'OK'
 
   robot.respond /where is (.+)/i, (msg) ->
     peoples = JSON.parse(robot.brain.get('peoples'))
